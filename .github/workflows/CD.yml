@@ -1,0 +1,33 @@
+name: CD
+
+on:
+  push:
+    branches: master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: .
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Installation ⏳
+      run: npm install
+      working-directory: ${{env.working-directory}}
+   
+    - name: Build 🧱
+      run: npm run build
+      working-directory: ${{env.working-directory}}
+    
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ./build
