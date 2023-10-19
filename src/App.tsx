@@ -4,6 +4,7 @@ import { Container, Nav, Navbar, Tab, Tabs } from "react-bootstrap";
 import Base64Encoding from "./Encoding/Base64/Base64Encoding";
 import JsonFormatting from "./Encoding/Json/JsonFormatting";
 import Md5Hashing from "./Hashing/MD5/Md5Hashing";
+import LicenseFileDecoder from "./Encoding/LicenseFile/LicenseFileDecoder";
 
 function App() {
     const [currentPage, setCurrentPage] = useState<"Text" | "File">("Text");
@@ -40,6 +41,9 @@ function App() {
                         >
                             <Tab eventKey="base64" title="Base64">
                                 <Base64Encoding uploadType="Text" />
+                            </Tab>
+                            <Tab eventKey="license" title=".lic (WIP)">
+                                <LicenseFileDecoder uploadType="Text" />
                             </Tab>
                             <Tab eventKey="json" title="JSON">
                                 <JsonFormatting uploadType="Text" />
