@@ -29,17 +29,18 @@ function JsonFormatting(props: JsonFormattingProps) {
         <>
             <h4>JSON</h4>
             {props.uploadType === "Text" && (
-                <Row>
-                    <Col>
-                        <p>Paste JSON below:</p>
-                        <TextInput className="shadow json-input-textarea" placeholder="Input" onChange={json => formatJson(json)} />
-                    </Col>
+                <>
+                    <Row>
+                        <Col>
+                            <p>Paste JSON below:</p>
+                            <TextInput className="shadow json-input-textarea" placeholder="Input" onChange={json => formatJson(json)} />
+                            
+                            <hr/>
 
-                    <Col>
-                        <p>Formatted JSON</p>
-                        <Form.Control className="shadow json-input-textarea" as="textarea" placeholder="Formatted JSON" value={output}/>
-                    </Col>
-                </Row>
+                            <Form.Control className="shadow json-input-textarea" as="textarea" placeholder="Formatted JSON" value={output}/>
+                        </Col>
+                    </Row>
+                </>
             )}
         </>
     );

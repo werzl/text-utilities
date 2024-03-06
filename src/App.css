@@ -37,10 +37,14 @@
   }
 }
 
+.text-input-tabs {
+  height: 150vh;
+}
+
 .input-textarea, .output-textarea {
   height: calc(100vh - 45rem);
 }
 
 .json-input-textarea, .json-output-textarea {
-  height: calc(100vh - 20rem);
+  height: calc(50vh - 14rem);
 }
