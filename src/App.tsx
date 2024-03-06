@@ -38,13 +38,13 @@ function App() {
                             id="uncontrolled-tab-example"
                             className="mb-3"
                         >
-                            <Tab eventKey="base64" title="Base64">
+                            <Tab eventKey="base64" title="Base64" className="text-input-tabs">
                                 <Base64Encoding uploadType="Text" />
                             </Tab>
-                            <Tab eventKey="json" title="JSON">
+                            <Tab eventKey="json" title="JSON" className="text-input-tabs">
                                 <JsonFormatting uploadType="Text" />
                             </Tab>
-							<Tab eventKey="md5" title="MD5 Hash">
+							<Tab eventKey="md5" title="MD5 Hash" className="text-input-tabs">
 								<Md5Hashing uploadType="Text"/>
 							</Tab>
                         </Tabs>
